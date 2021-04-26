@@ -33,7 +33,7 @@ async def _(_, message: Message):
     audio = get.audio(message.reply_to_message)
     url = get.url(message)
     if audio:
-        duration = round(audio.duration / 60)
+        duration = round(audio.duration / 90)
         if duration > DURATION_LIMIT:
             raise DurationLimitError(
                 f'Videos longer than {DURATION_LIMIT} minute(s) aren’t allowed, the provided video is {duration} minute(s)',
